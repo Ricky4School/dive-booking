@@ -1,73 +1,103 @@
-# React + TypeScript + Vite
+# 🌊 Dive Booking Web App (React + TypeScript)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern dive booking web application built with React, TypeScript, and Tailwind CSS.
+This project simulates a real-world booking system with API integration, internationalization, and clean frontend architecture.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+* 🏝️ Landing Page with Hero Carousel & Sections
+* 📦 Dive Package Listing (API-driven)
+* 🧾 Booking System (LocalStorage persistence)
+* 📜 Booking History (CRUD)
+* 📞 Contact Page (Map + Social Links)
+* 🌐 Multi-language Support (English / 中文)
+* ⚡ Responsive UI with Tailwind CSS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧱 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* **Frontend:** React + TypeScript
+* **Routing:** React Router
+* **Styling:** Tailwind CSS
+* **HTTP Client:** Axios
+* **State/Data Layer:** Custom Hooks
+* **i18n:** react-i18next
+* **Mock API:** JSON (simulating backend)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📁 Project Structure
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+├── components/      # Reusable UI components
+├── pages/           # Page-level components
+├── hooks/           # Custom hooks (data layer)
+├── services/        # API & request layer
+├── types/           # TypeScript types
+├── i18n/            # Localization files
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🔌 API (Mock)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Data is served from:
+
 ```
+/public/api/packages.json
+```
+
+Using:
+
+```ts
+axios.get("/api/packages.json")
+```
+
+---
+
+## 🌍 Internationalization
+
+* Supports **English (en)** and **Chinese (zh)**
+* Language preference is stored in **localStorage**
+* Automatically restored on page reload
+
+---
+
+## 💳 Booking Flow
+
+1. Browse dive packages
+2. Navigate to booking page
+3. Submit booking form
+4. Data stored in localStorage
+5. View in booking history
+
+---
+
+## ⚙️ Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
+## 🎯 Future Improvements
+
+* 🔄 Replace mock API with real backend
+* 🧠 Add global state management (Zustand)
+* 📊 Add filtering & sorting for packages
+* 🔔 Toast notifications for UX
+* 🔐 Authentication system
+
+---
+
+## 👨‍💻 Author
+
+Built as a hands-on project to simulate real-world frontend architecture and improve system design skills.
+
+---
